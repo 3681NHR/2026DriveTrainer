@@ -41,9 +41,9 @@ public class RobotContainer {
   public void periodic(){
     if(Math.hypot(xboxCon1.getLeftX(), xboxCon1.getLeftY()) > 0.15 || Math.abs(xboxCon1.getRightX()) > 0.15){
       drive.drive(new ChassisSpeeds(
-        -MathUtil.applyDeadband(Math.pow(xboxCon1.getLeftY() , 1), 0.15)*MAX_LINEAR_SPEED,
-        -MathUtil.applyDeadband(Math.pow(xboxCon1.getLeftX() , 1), 0.15)*MAX_LINEAR_SPEED,
-         MathUtil.applyDeadband(Math.pow(xboxCon1.getRightX(), 1), 0.15)*MAX_ANGULAR_SPEED
+        MathUtil.applyDeadband(Math.pow(xboxCon1.getLeftY() , 1), 0.15)*MAX_LINEAR_SPEED,
+        MathUtil.applyDeadband(Math.pow(xboxCon1.getLeftX() , 1), 0.15)*MAX_LINEAR_SPEED,
+        MathUtil.applyDeadband(Math.pow(xboxCon1.getRightX(), 1), 0.15)*MAX_ANGULAR_SPEED
       ));
     } else {
       drive.drive(new ChassisSpeeds());
